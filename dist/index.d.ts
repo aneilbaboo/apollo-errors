@@ -11,11 +11,13 @@ export interface ErrorConfig {
 }
 export interface ErrorInfo {
     message: string;
-    name: string;
-    time_thrown: string;
-    data?: object;
     path?: string;
     locations?: any;
+    extensions?: {
+        name: string;
+        time_thrown: string;
+        data?: object;
+    };
 }
 export declare class ApolloError extends ExtendableError {
     name: string;

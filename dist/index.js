@@ -55,11 +55,13 @@ var ApolloError = /** @class */ (function (_super) {
         var _a = this, name = _a.name, message = _a.message, time_thrown = _a.time_thrown, data = _a.data, _showLocations = _a._showLocations, _showPath = _a._showPath, path = _a.path, locations = _a.locations;
         var error = {
             message: message,
-            name: name,
-            time_thrown: time_thrown,
-            data: data,
             path: path,
-            locations: locations
+            locations: locations,
+            extensions: {
+                name: name,
+                time_thrown: time_thrown,
+                data: data
+            }
         };
         if (_showLocations) {
             error.locations = locations;
